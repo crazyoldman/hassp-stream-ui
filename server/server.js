@@ -62,12 +62,13 @@ app.get('/api/aprsdata', function(req,res){
 });
 
 function WriteAprsToLog(aprsData){
-
-  let content = JSON.stringify(aprsData);
-   var filePath = logDir + '\\' + aprsData.entries[0].time + '.json';
-    fs.writeFile(filePath, content, 'utf8', function (err) {
-      if (err) {
-          return console.log(err);
-      }
-    }); 
+  if(!!aprsData && aprsData.found == 1){
+    let content = JSON.stringify(aprsData);
+    var filePath = logDir + '\\' + aprsData.entries[0].time + '.json';
+      fs.writeFile(filePath, content, 'utf8', function (err) {
+        if (err) {
+            return console.log(err);
+        }
+      }); 
+  }
 }
