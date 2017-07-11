@@ -1,0 +1,55 @@
+
+<div class="presenter">
+
+  <h3>{{testdata}}</h3>
+
+{{lastAprsData | json}}
+<button (click)="getAprsData()">Get Aprs Data</button>
+<button (click)="setAltitude(33000)">Set Degree</button>
+
+
+<div class="twitter-container">
+  <div class="twitter-widget">
+    <a class="twitter-timeline"  href="https://twitter.com/hashtag/hassp" data-widget-id="884335050187304960">#hassp Tweets</a>
+  </div>
+</div>
+
+<div class="title-bar">
+  <p style="margin:0;">{{title.value}}</p>
+</div>
+<div class="title-bar-triangle"></div>
+
+<div class="marquee">
+	<p style="margin:0;">{{scrollingText.value}}</p>
+</div>
+
+<div class="logo">
+  <img src="./assets/HasspLogoWhite.png" class="logo-image">
+</div>
+
+<div class="gauge-group">
+
+  <div class="gauge">
+    <div class="gauge-title">Altitude</div>
+    <div class="mask">
+      <div class="semi-circle"></div>
+      <div class="semi-circle--mask"  [style.transform]="altitudeTransform">
+      </div>
+    </div>
+    <div class="gauge-text">{{altitude | number:'.' }} M</div>
+  </div>
+
+  <div class="gauge">
+    <div class="gauge-title">Velocity</div>
+    <div class="mask">
+      <div class="semi-circle"></div>
+      <div class="semi-circle--mask"  [style.transform]="velocityTransform">
+      </div>
+    </div>
+    <div class="gauge-text">{{velocity | number:'.' }} KPH</div>
+  </div>
+
+</div>
+
+
+</div>

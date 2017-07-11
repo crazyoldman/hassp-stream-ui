@@ -1,0 +1,11 @@
+<h3>Controller</h3>
+
+<h2>Title</h2>
+<div>Current Title: {{title.value || 'N/A'}}</div>
+<input [(ngModel)]="newTitle"  /><button (click)="setTitle()">Set Value</button>
+
+<h2>Scrolling Text</h2>
+<div>Current Scrolling Text: {{scrollingText.value || 'N/A'}}</div>
+<input [(ngModel)]="newScrollingText"  /><button (click)="setScrollingText()">Set Value</button>
+
+
