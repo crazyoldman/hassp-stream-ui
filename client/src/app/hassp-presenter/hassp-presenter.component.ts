@@ -88,7 +88,7 @@ export class HasspPresenterComponent implements OnInit, OnDestroy {
       return t;
     }(document, "script", "twitter-wjs"));
     //setTimeout(function () { twttr.widgets.load(); }, 500);
-
+    setInterval(() => {this.getAprsData()},1000*15);
   }
   
   ngOnDestroy() {
